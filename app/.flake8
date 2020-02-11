@@ -1,6 +1,2 @@
 [flake8]
-exclude =
-  migrations
-  __pycache__,
-  manage.py,
-  settings.py
+exclude = .git, core/migrations,__pycache__,manage.py,app/settings.py

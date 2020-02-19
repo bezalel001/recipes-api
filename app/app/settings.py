@@ -38,8 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third-party
+    'rest_framework',
+    'rest_framework.authtoken',
+
     # Local
     'core.apps.CoreConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +88,7 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASS'),
+        'PORT': 5432
     }
 }
 

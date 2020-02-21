@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import ugettext as _
 
-from .models import CustomUser
+from .models import CustomUser, Tag
 
 
 class CustomUserAdmin(BaseUserAdmin):
@@ -32,3 +32,4 @@ class CustomUserAdmin(BaseUserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Tag)

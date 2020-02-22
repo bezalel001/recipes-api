@@ -50,3 +50,28 @@ class ModelTests(TestCase):
             name='Cucumber', user=sample_user())
 
         self.assertEqual(str(ingredient), ingredient.name)
+
+    def test_recipe_str(self):
+        """Test that we can create a recipe object and successfully retrieve it as a string.
+        Test the recipe str representation
+        """
+        recipe = models.Recipe.objects.create(
+            user=sample_user(), title='Steak and mushroom sauce',
+            time_minutes=5,
+            price=5.00
+        )
+        self.assertEqual(str(recipe), recipe.title)
+
+    def test_tag_content(self):
+        """Test that a user can successfully create a recipe object and retrieve its content.
+        Test that the content 
+        """
+        recipe = models.Recipe.objects.create(
+            user=sample_user(), title='Steak and mushroom sauce',
+            time_minutes=5,
+            price=5.00
+        )
+
+        self.assertEqual(f'{recipe.user.email}', 'user@example.com')
+        self.assertEqual(recipe.time_minutes, 5)
+        self.assertEqual(recipe.price, 5.00)
